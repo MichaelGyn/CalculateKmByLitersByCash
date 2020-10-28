@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +48,7 @@
     <h2>Menu Principal</h2>
   </div>
   <div class="form-group  d-flex justify-content-center">
-  <form action="" method="GET">
+  <form action="" method="POST">
   <div class="row">
     <div class="col-sm">
       <h2>Combustível: Álcool</h2>
@@ -85,3 +81,59 @@
 </div>
 </body>
 </html>
+
+
+<?php
+
+if(isset($_POST['distance1']) && !empty($_POST['distance1'])) {
+
+    $distance1 = filter_input(INPUT_POST, 'distance1');
+    echo $distance1;
+        } else {
+            die("Não iniciou");
+            }
+
+
+$kmPerLiter1 = filter_input(INPUT_POST, 'kmPerLiter1');
+$FuelPrice1 = filter_input(INPUT_POST, 'FuelPrice1');
+$distance2 = filter_input(INPUT_POST, 'distance2');
+$kmPerLiter2 = filter_input(INPUT_POST, 'kmPerLiter2');
+$FuelPrice2 = filter_input(INPUT_POST, 'FuelPrice2');
+
+
+echo "A distância 1 informada foi: " . $distance1 . '<br>';
+echo "Seu automovel faz " . $kmPerLiter1 . " km's por litro de combustivel" . '<br>';
+echo "O preço informado do combustível foi: " . $FuelPrice1 . '<br>';
+echo "A distância 2 informada foi: " . $distance2 . '<br>';
+echo "Seu automovel faz " . $kmPerLiter2 . " km's por litro de combustivel" . '<br>';
+echo "O preço informado do combustível foi: " . $FuelPrice2 . "." . '<br>' . "Com essas informações, temos o cenário abaixo: " . '<br>';
+
+$totalLiters1 = $distance1 / $kmPerLiter1;
+
+$result1 = $totalLiters1 * $FuelPrice1;
+
+$totalLiters2 = $distance2 / $kmPerLiter2;
+
+$result2 = $totalLiters2 * $FuelPrice2;
+
+echo "<h2>Abastecido com Alcool</h2>";
+echo "Em uma distância percorrida de " . $distance1 . " quilômetros, você gastará um total de R$ " . $result1 . " reais, pois seu carro atualmente faz " . $kmPerLiter1 . " km/l no combustível álcool";
+
+echo '<br>';
+echo '<br>';
+echo "<h2>Abastecido com Gasolina</h2>";
+echo "Em uma distância percorrida de " . $distance2 . " quilômetros, você gastará um total de R$ " . $result2 . " reais, pois seu carro atualmente faz " . $kmPerLiter2 . " km/l no combustível gasolina";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
