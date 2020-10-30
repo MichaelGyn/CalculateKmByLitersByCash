@@ -103,7 +103,7 @@
 
 <?php
 
-if(isset($_POST['distance1']) && !empty($_POST['distance1'])) {
+if(isset($_POST['distance1']) && !empty($_POST['distance1']) && isset($_POST['kmPerLiter1']) && !empty($_POST['kmPerLiter1']) && isset($_POST['FuelPrice1']) && !empty($_POST['FuelPrice1']) && isset($_POST['distance2']) && !empty($_POST['distance2']) && isset($_POST['kmPerLiter2']) && !empty($_POST['kmPerLiter2']) && isset($_POST['FuelPrice2']) && !empty($_POST['FuelPrice2'])) {
 
     $distance1 = filter_input(INPUT_POST, 'distance1');
     echo $distance1;
@@ -119,14 +119,28 @@ $kmPerLiter2 = filter_input(INPUT_POST, 'kmPerLiter2');
 $FuelPrice2 = filter_input(INPUT_POST, 'FuelPrice2');
 
 
-echo "A distância 1 informada foi: " . $distance1 . '<br>';
+echo '<br>' . "A distância 1 informada foi: " . $distance1 . '<br>';
 echo "Seu automovel faz " . $kmPerLiter1 . " km's por litro de combustivel" . '<br>';
 echo "O preço informado do combustível foi: " . $FuelPrice1 . '<br>';
 echo "A distância 2 informada foi: " . $distance2 . '<br>';
 echo "Seu automovel faz " . $kmPerLiter2 . " km's por litro de combustivel" . '<br>';
 echo "O preço informado do combustível foi: " . $FuelPrice2 . "." . '<br>' . "Com essas informações, temos o cenário abaixo: " . '<br>';
 
+
+require_once('validations.php');
+
+$distance1 = convertToFlat($distance1);
+$kmPerLiter1 = convertToFlat($kmPerLiter1);
+$FuelPrice1 = convertToFlat($FuelPrice1);
+$distance2 = convertToFlat($distance2);
+$kmPerLiter2 = convertToFlat($kmPerLiter2);
+$FuelPrice2 = convertToFlat($FuelPrice2);
+
+
+
+
 $totalLiters1 = $distance1 / $kmPerLiter1;
+
 echo '<br>' . $distance1 . ' / ' . $kmPerLiter1 . ' = ' . $totalLiters1;
 
 $result1 = $totalLiters1 * $FuelPrice1;
