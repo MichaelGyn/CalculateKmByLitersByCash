@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script>
+  function formatCoin(i) {
+	var v = i.value.replace(/\D/g,'');
+	v = (v/100).toFixed(2) + '';
+	v = v.replace(".", ",");
+	v = v.replace(/(\d)(\d{3})(\d{3}),/g, "$1.$2.$3,");
+	v = v.replace(/(\d)(\d{3}),/g, "$1.$2,");
+	i.value = v;
+}
+
+  </script> 
   <title>Home</title>
 </head>
 <body>
@@ -53,20 +64,20 @@
     <div class="col-sm">
       <h2>Combustível: Álcool</h2>
         <label for="Distance1">Distância a calcular: </label>
-        <input type="number" name="distance1" id="distance1" placeholder="Em Km" required><br>
+        <input type="text" name="distance1" id="distance1" onkeyup="formatCoin(this);" placeholder="Em Km" required><br>
         <label for="kmPerLiter1">Quantos km seu carro faz com 1 litro? </label>
-        <input type="number" name="kmPerLiter1" id="kmPerLiter1" placeholder="Em km" required><br>
+        <input type="text" name="kmPerLiter1" id="kmPerLiter1" onkeyup="formatCoin(this);" placeholder="Em km" required><br>
         <label for="FuelPrice1">Qual o preço do litro de combustível? </label>
-        <input type="number" name="FuelPrice1" id="FuelPrice1" placeholder="Em R$" required><br>
+        <input type="text" name="FuelPrice1" id="FuelPrice1" onkeyup="formatCoin(this);" placeholder="Em R$" required><br>
     </div>
     <div class="col-sm">
       <h2>Combustível: Gasolina</h2>
       <label for="Distance2">Distância a calcular: </label>
-        <input type="number" name="distance2" id="distance2" placeholder="Em Km" required><br>
+        <input type="text" name="distance2" id="distance2" onkeyup="formatCoin(this);" placeholder="Em Km" required><br>
         <label for="kmPerLiter2">Quantos km seu carro faz com 1 litro? </label>
-        <input type="number" name="kmPerLiter2" id="kmPerLiter2" placeholder="Em km" required><br>
+        <input type="text" name="kmPerLiter2" id="kmPerLiter2" onkeyup="formatCoin(this);" placeholder="Em km" required><br>
         <label for="FuelPrice2">Qual o preço do litro de combustível? </label>
-        <input type="number" name="FuelPrice2" id="FuelPrice2" placeholder="Em R$" required><br>
+        <input type="text" name="FuelPrice2" id="FuelPrice2" onkeyup="formatCoin(this);" placeholder="Em R$" required><br>
     </div>
   </div>
   <div class="row">
@@ -80,6 +91,13 @@
 </form>
 </div>
 </body>
+
+
+<footer>
+
+
+</footer>
+
 </html>
 
 
@@ -109,8 +127,11 @@ echo "Seu automovel faz " . $kmPerLiter2 . " km's por litro de combustivel" . '<
 echo "O preço informado do combustível foi: " . $FuelPrice2 . "." . '<br>' . "Com essas informações, temos o cenário abaixo: " . '<br>';
 
 $totalLiters1 = $distance1 / $kmPerLiter1;
+echo '<br>' . $distance1 . ' / ' . $kmPerLiter1 . ' = ' . $totalLiters1;
 
 $result1 = $totalLiters1 * $FuelPrice1;
+
+echo '<br>' . $totalLiters1 . ' * ' . $FuelPrice1 . ' = ' . $result1;
 
 $totalLiters2 = $distance2 / $kmPerLiter2;
 
@@ -124,16 +145,4 @@ echo '<br>';
 echo "<h2>Abastecido com Gasolina</h2>";
 echo "Em uma distância percorrida de " . $distance2 . " quilômetros, você gastará um total de R$ " . $result2 . " reais, pois seu carro atualmente faz " . $kmPerLiter2 . " km/l no combustível gasolina";
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+?>
