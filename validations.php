@@ -10,24 +10,11 @@ function convertToFlat($parameter) {
         die();
     } else{
     
-    var_dump($parameter);
-    
     $result = str_ireplace('.', '', $parameter);
-    echo '<br>';
-    echo $result;
-    
+  
     $result = str_ireplace(',', '.', $result);
-    echo '<br>';
-    echo $result;
-    
-    
-    echo '<br>';
-    
-    var_dump($result);
-    
+
     $parameter = floatval($result);
-    
-    echo '<br>';
     
     return $parameter;
     

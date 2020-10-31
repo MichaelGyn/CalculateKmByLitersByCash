@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
   <script>
   function formatCoin(i) {
 	var v = i.value.replace(/\D/g,'');
@@ -18,10 +16,13 @@
 	i.value = v;
 }
 
-  </script> 
-  <title>Home</title>
+</script> 
+
+<title>Home</title>
 </head>
+
 <body>
+  
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/"><img border="0" alt="W3Schools" src="./assets/imgs/logo.jpg" width="50" height="50"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,23 +35,23 @@
       </li> 
       <li class="nav-item dropdown">
       <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
+        <a class="nav-link dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ferramentas 
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Empty</a>
+          <a class="dropdown-item" href="#">Empty</a>
+        </div>
+      </div>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
-    </ul>
+    </ul><!--
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    </form>-->
   </div>
 </nav>
 
@@ -82,8 +83,9 @@
   </div>
   <div class="row">
     <div class="col-sm d-flex justify-content-center">
-      <input type="submit" class="btn btn-outline-success" value="Enviar"><br>
+    <button type="submit" id="Enviar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">Enviar</button>
     </div>
+    
     <div class="col-sm d-flex justify-content-center">
       <input type="reset" class="btn btn-outline-danger" value="Limpar">
     </div>
@@ -91,23 +93,13 @@
 </form>
 </div>
 
-
-<div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
-    <span class="caret"></span></button>
-    <ul class="dropdown-menu">
-      <li><a href="#">HTML</a></li>
-      <li><a href="#">CSS</a></li>
-      <li><a href="#">JavaScript</a></li>
-    </ul>
-  </div>
 </body>
 
 
 <footer>
-
-<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
-<script src='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </footer>
 
 </html>
@@ -118,7 +110,7 @@
 if(isset($_POST['distance1']) && !empty($_POST['distance1']) && isset($_POST['kmPerLiter1']) && !empty($_POST['kmPerLiter1']) && isset($_POST['FuelPrice1']) && !empty($_POST['FuelPrice1']) && isset($_POST['distance2']) && !empty($_POST['distance2']) && isset($_POST['kmPerLiter2']) && !empty($_POST['kmPerLiter2']) && isset($_POST['FuelPrice2']) && !empty($_POST['FuelPrice2'])) {
 
     $distance1 = filter_input(INPUT_POST, 'distance1');
-    echo $distance1;
+    //echo $distance1;
         } else {
             die("Não iniciou");
             }
@@ -130,15 +122,6 @@ $distance2 = filter_input(INPUT_POST, 'distance2');
 $kmPerLiter2 = filter_input(INPUT_POST, 'kmPerLiter2');
 $FuelPrice2 = filter_input(INPUT_POST, 'FuelPrice2');
 
-
-echo '<br>' . "A distância 1 informada foi: " . $distance1 . '<br>';
-echo "Seu automovel faz " . $kmPerLiter1 . " km's por litro de combustivel" . '<br>';
-echo "O preço informado do combustível foi: " . $FuelPrice1 . '<br>';
-echo "A distância 2 informada foi: " . $distance2 . '<br>';
-echo "Seu automovel faz " . $kmPerLiter2 . " km's por litro de combustivel" . '<br>';
-echo "O preço informado do combustível foi: " . $FuelPrice2 . "." . '<br>' . "Com essas informações, temos o cenário abaixo: " . '<br>';
-
-
 require_once('validations.php');
 
 $distance1 = convertToFlat($distance1);
@@ -148,21 +131,13 @@ $distance2 = convertToFlat($distance2);
 $kmPerLiter2 = convertToFlat($kmPerLiter2);
 $FuelPrice2 = convertToFlat($FuelPrice2);
 
-
-
-
 $totalLiters1 = $distance1 / $kmPerLiter1;
-
-echo '<br>' . $distance1 . ' / ' . $kmPerLiter1 . ' = ' . $totalLiters1;
 
 $result1 = $totalLiters1 * $FuelPrice1;
 
 $result1 = round($result1, 2);
 
 $result1 = str_ireplace('.', ',', $result1);
- 
-
-echo '<br>' . $totalLiters1 . ' * ' . $FuelPrice1 . ' = ' . $result1;
 
 $totalLiters2 = $distance2 / $kmPerLiter2;
 
@@ -172,6 +147,8 @@ $result2 = round($result2, 2);
 
 $result2 = str_ireplace('.', ',', $result2);
 
+
+/*
 echo "<h2>Abastecido com Alcool</h2>";
 echo "Em uma distância percorrida de " . $distance1 . " quilômetros, você gastará um total de R$ " . $result1 . " reais, pois seu carro atualmente faz " . $kmPerLiter1 . " km/l no combustível álcool";
 
@@ -179,5 +156,48 @@ echo '<br>';
 echo '<br>';
 echo "<h2>Abastecido com Gasolina</h2>";
 echo "Em uma distância percorrida de " . $distance2 . " quilômetros, você gastará um total de R$ " . $result2 . " reais, pois seu carro atualmente faz " . $kmPerLiter2 . " km/l no combustível gasolina";
+*/
+
+
+if ($result1 > 0) {
+  ?>
+
+<!--modal -->
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Resultado da Busca:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p><?php 
+            echo "<h2>Abastecido com Álcool</h2>";
+            echo "Em uma distância percorrida de " . $distance1 . " quilômetros, você gastará um total de R$ " . $result1 . " reais, pois seu carro atualmente faz " . $kmPerLiter1 . " km/l, abastecido com álcool";
+            echo '<br>';
+            echo '<br>';
+            echo "<h2>Abastecido com Gasolina</h2>";
+            echo "Em uma distância percorrida de " . $distance2 . " quilômetros, você gastará um total de R$ " . $result2 . " reais, pois seu carro atualmente faz " . $kmPerLiter2 . " km/l, abastecido com gasolina";
+          ?></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" href="/"class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+$('#exampleModal').modal('show');
+
+</script>
+ 
+<?php } else {
+  echo "0 Resultados encontrados. Favor pesquise novamente";
+}
 
 ?>
