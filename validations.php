@@ -6,7 +6,7 @@ function convertToFlat($parameter) {
     $casaDosMilhoes = 14;
     
     if(strlen($contator > $casaDosMilhoes)) {
-        echo "<script>alert('Essa ferramenta calcula a distância até milhões! Favor inserir um número até na casa dos milhões');</script>";
+        echo "<script>alert('Essa ferramenta calcula dados até milhões! Favor inserir um número até na casa dos milhões');</script>";
         header('location: index.php');
         die();
     } else{
