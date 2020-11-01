@@ -122,7 +122,7 @@ $result2 = number_format($result2, 2, ',', '.');
 //$result2 = str_ireplace('.', ',', $result2);
 
 
-if ($result1 > 0) { ?>
+if (!empty($result1)) { ?>
 
 <!--modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
@@ -155,5 +155,6 @@ $('#exampleModal').modal('show');
 </script>
  
 <?php } else {
-  echo "0 Resultados encontrados. Favor pesquise novamente";
+  echo "<script>alert('0 Resultados encontrados. Favor pesquise novamente');</script>";
+  header('location: index.php');
 } ?>
