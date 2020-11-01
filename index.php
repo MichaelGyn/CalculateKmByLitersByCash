@@ -110,15 +110,17 @@ $FuelPrice2 = convertToFlat($FuelPrice2);
 $totalLiters1 = $distance1 / $kmPerLiter1;
 $result1 = $totalLiters1 * $FuelPrice1;
 $result1 = round($result1, 2);
-$result1 = str_ireplace('.', ',', $result1);
 $result1 = number_format($result1, 2, ',', '.');
+//$result1 = str_ireplace('.', ',', $result1);
+
 
 
 $totalLiters2 = $distance2 / $kmPerLiter2;
 $result2 = $totalLiters2 * $FuelPrice2;
 $result2 = round($result2, 2);
-$result2 = str_ireplace('.', ',', $result2);
 $result2 = number_format($result2, 2, ',', '.');
+//$result2 = str_ireplace('.', ',', $result2);
+
 
 if ($result1 > 0) { ?>
 
