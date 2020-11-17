@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <div class="row  text-success d-flex justify-content-center">
+      <h2>Menu Principal</h2>
+    </div>
+    <div class="form-group text-info d-flex justify-content-center">
+    <form action="result.php" method="POST">
+    <div class="row">
+      <div class="col-sm">
+        <h2>Combustível: Álcool</h2>
+          <label for="LabelDistanceMenuAlcohol">Distância a calcular: </label>
+          <input type="text" class="border border-primary" name="DistanceMenuAlcohol" id="DistanceMenuAlcohol" onkeyup="formatCoin(this);" placeholder="Em Km" autofocus required><br>
+          <label for="LabelkmPerLiterMenuAlcohol">Quantos km seu carro faz com 1 litro? </label>
+          <input type="text" class="border border-primary" name="kmPerLiterMenuAlcohol" id="kmPerLiterMenuAlcohol" onkeyup="formatCoin(this);" placeholder="Em km" required><br>
+          <label for="LabelFuelPriceMenuAlcohol">Qual o preço do litro de combustível? </label>
+          <input type="text" class="border border-primary" name="FuelPriceMenuAlcohol" id="FuelPriceMenuAlcohol" onkeyup="formatCoin(this);" placeholder="Em R$" required><br>
+      </div>
+      <div class="col-sm">
+        <h2>Combustível: Gasolina</h2>
+        <label for="LabelDistanceMenuGasoline">Distância a calcular: </label>
+          <input type="text" class="border border-primary" name="DistanceMenuGasoline" id="DistanceMenuGasoline" onkeyup="formatCoin(this);" placeholder="Em Km" required><br>
+          <label for="LabelkmPerLiterMenuGasoline">Quantos km seu carro faz com 1 litro? </label>
+          <input type="text" class="border border-primary" name="kmPerLiterMenuGasoline" id="kmPerLiterMenuGasoline" onkeyup="formatCoin(this);" placeholder="Em km" required><br>
+          <label for="LabelFuelPriceMenuGasoline">Qual o preço do litro de combustível? </label>
+          <input type="text" class="border border-primary" name="FuelPriceMenuGasoline" id="FuelPriceMenuGasoline" onkeyup="formatCoin(this);" placeholder="Em R$" required><br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm d-flex justify-content-center">
+      <button type="submit" id="Enviar" class="btn btn-outline-success" data-toggle="modal" data-target="#exampleModal">Enviar</button>
+      </div>
+      
+      <div class="col-sm d-flex justify-content-center">
+        <input type="reset" class="btn btn-outline-danger" value="Limpar">
+      </div>
+    </div>
+  </form>
+  </div>
+  </body>
+  
