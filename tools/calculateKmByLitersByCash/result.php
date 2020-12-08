@@ -3,7 +3,8 @@
 if(isset($_POST['distanceMenuAlcohol']) && !empty($_POST['distanceMenuAlcohol']) && isset($_POST['kmPerLiterMenuAlcohol']) && !empty($_POST['kmPerLiterMenuAlcohol']) && isset($_POST['fuelPriceMenuAlcohol']) && !empty($_POST['fuelPriceMenuAlcohol']) && isset($_POST['distanceMenuGasoline']) && !empty($_POST['distanceMenuGasoline']) && isset($_POST['kmPerLiterMenuGasoline']) && !empty($_POST['kmPerLiterMenuGasoline']) && isset($_POST['fuelPriceMenuGasoline']) && !empty($_POST['fuelPriceMenuGasoline'])) {
     $distanceMenuAlcohol = filter_input(INPUT_POST, 'distanceMenuAlcohol');
      } else {
-            die("No isset");
+            header('location: index.php');
+            exit();
             }
 
 
@@ -49,6 +50,11 @@ $resultMenuGasoline = $totalLitersMenuGasoline * $fuelPriceMenuGasoline;
 $resultMenuGasoline = round($resultMenuGasoline, 2);
 $resultMenuGasoline = number_format($resultMenuGasoline, 2, ',', '.');
 //$resultMenuGasoline = str_ireplace('.', ',', $resultMenuGasoline);
+
+include_once './views/head.html';
+include_once './views/body.html';
+include_once './views/footer.html';
+
 
 if (!empty($resultMenuAlcohol)) { ;?>
 
